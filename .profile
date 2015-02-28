@@ -7,3 +7,7 @@ go(){ cd $1; pwd; }
 #bind '"[B": history-search-forward'
 set shot-all-if-ambiguous on
 set completion-ignore-case on
+
+# virtualenv must be installed in system PIP.
+mkvenv(){ virtualenv ~/.venvs/$1; }
+vactivate(){ deactivate; source ~/.venvs/$1/bin/activate; }
