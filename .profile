@@ -1,3 +1,5 @@
+export PATH="/usr/local/bin:$PATH"
+
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vimlast='vim -S ~/.vim/lastsesh.vim'
 alias ll='ls -al'

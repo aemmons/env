@@ -103,6 +103,9 @@ map <F2> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
+" Ropevim
+let ropevim_vim_completion=1
+
 " Session settings
 set ssop-=options    " do not store global and local values in a session
 set ssop-=folds      " do not store folds
@@ -136,7 +139,7 @@ Bundle 'SuperTab'
 Bundle 'pep8'
 Bundle 'fugitive.vim'
 Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Bundle 'rope.vim'
+"Bundle 'python-rope/ropevim'
 Bundle 'The-NERD-Commenter'
 Bundle 'chapa'
 Bundle 'airblade/vim-gitgutter'
