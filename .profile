@@ -1,7 +1,6 @@
 export PATH="/usr/local/bin:$PATH"
 
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias vimlast='vim -S ~/.vim/lastsesh.vim'
 alias ll='ls -al'
 go(){ cd $1; pwd; }
 
@@ -13,3 +12,4 @@ set completion-ignore-case on
 # virtualenv must be installed in system PIP.
 mkvenv(){ virtualenv ~/.venvs/$1; }
 vactivate(){ deactivate; source ~/.venvs/$1/bin/activate; }
+vimlast(){ vim -S ~/.vim/sessions/lastsesh$1\.vim; }
