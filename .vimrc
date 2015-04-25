@@ -49,6 +49,8 @@ set smarttab
 set list
 set listchars=tab:>-,trail:-
 set colorcolumn=80
+"set formatoptions-=cro
+"autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
 " set statusline+=%{fugitive#statusline()} " Fugitive to show current git branch
 
@@ -109,8 +111,16 @@ let ropevim_vim_completion=1
 " Session settings
 set ssop-=options    " do not store global and local values in a session
 set ssop-=folds      " do not store folds
-command MkSesh mksession! ~/.vim/lastsesh.vim
-
+let g:PathToSessions = $HOME . "/.vim/sessions/"
+function MkSesh(...)
+  let fname = a:0 > 0 ? a:1 : ""
+  if fname != ""
+    exe "mksession! " . g:PathToSessions . "lastsesh" . fname . ".vim"
+  else
+    exe "mksession! " . g:PathToSessions . "lastsesh.vim"
+  endif
+endfunction
+com -nargs=* MkSesh call MkSesh(<q-args>)
 
 " VUNDLE:
 set rtp+=~/.vim/bundle/vundle/
@@ -159,3 +169,6 @@ filetype plugin indent on     " required!
 
 " Set column color for gitgutter
 highlight clear SignColumn
+
+" Turn Off comment continuation.
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
