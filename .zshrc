@@ -53,3 +53,7 @@ export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bi
 
 # For VI keybindings
 bindkey -v
+
+# ZSH Docker Completion
+fpath=(~/.zsh/completion $fpath)
+autoload -Uz compinit && compinit -i
