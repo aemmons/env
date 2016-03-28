@@ -9,9 +9,9 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 # iTerm2 Settings
 - General
--- Set path to zsh for 'command'
--- Set Working Directory to Reuse previous Session's
+ - Set path to zsh for 'command'
+ - Set Working Directory to Reuse previous Session's
 - Set color settings - Load Presets
 - Set Fonts.
 - Terminal
--- Set Report Terminal Type to xterm
+ - Set Report Terminal Type to xterm
