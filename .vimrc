@@ -49,6 +49,7 @@ set smarttab
 set list
 set listchars=tab:>-,trail:-
 set colorcolumn=80
+set backspace=indent,eol,start
 "set formatoptions-=cro
 "autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
@@ -122,6 +123,35 @@ function MkSesh(...)
 endfunction
 com -nargs=* MkSesh call MkSesh(<q-args>)
 
+" Session settings
+set ssop-=options    " do not store global and local values in a session
+set ssop-=folds      " do not store folds
+let g:PathToSessions = $HOME . "/.vim/sessions/"
+function MkSesh(...)
+  let fname = a:0 > 0 ? a:1 : ""
+  if fname != ""
+    exe "mksession! " . g:PathToSessions . "lastsesh" . fname . ".vim"
+  else
+    exe "mksession! " . g:PathToSessions . "lastsesh.vim"
+  endif
+endfunction
+com -nargs=* MkSesh call MkSesh(<q-args>)
+
+" Renumber proto defs.
+function! Pnum(...) range
+    let idx = a:0 > 0 ? a:1 : 1
+    for linenum in range(a:firstline, a:lastline)
+        " set index of the attribute.
+        let curr_line = getline(linenum)
+        if curr_line =~ '\s\d\+;'
+            let replacement = substitute(curr_line, '\s\d\+;', ' '.idx.';', 'g')
+            call setline(linenum, replacement)
+            let idx += 1
+        endif
+    endfor
+endfunction
+com -nargs=* -range Pnum <line1>,<line2>call Pnum(<f-args>)
+
 " VUNDLE:
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -172,3 +202,6 @@ highlight clear SignColumn
 
 " Turn Off comment continuation.
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+" Turn off autostart for instant_markdown_d
+let g:instant_markdown_autostart = 0
