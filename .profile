@@ -43,3 +43,7 @@ function we(){
     fi
 }
 
+export GOPATH=$HOME/Documents/programming/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
