@@ -1,7 +1,5 @@
 export PATH="/usr/local/bin:$PATH"
 
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias mysql='/usr/local/mysql/bin/mysql'
 alias ll='ls -al'
 go(){ cd $1; pwd; }
 
