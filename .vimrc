@@ -78,6 +78,8 @@ map <unique> <S-T> <Plug>TaskList
 " pep8 plugin stuff
 let g:pep8_map='<leader>8'
 
+let g:snipMate = { 'snippet_version' : 1 }
+
 " SnipMate shortcut
 imap <C-J> <Plug>snipMateNextOrTrigger
 smap <C-J> <Plug>snipMateNextOrTrigger
