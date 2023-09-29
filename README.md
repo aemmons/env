@@ -15,3 +15,10 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 - Set Fonts.
 - Terminal
  - Set Report Terminal Type to xterm
+
+# Programs to Install
+Brave Browser
+Source Tree
+Spotify
+VSCode
+XCode
