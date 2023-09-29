@@ -1,6 +1,6 @@
 export PATH="/usr/local/bin:$PATH"
 
-alias ll='ls -al'
+alias ll='ls -alh'
 go(){ cd $1; pwd; }
 
 #bind '"[A": history-search-backward'
