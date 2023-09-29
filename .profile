@@ -47,3 +47,13 @@ export GOPATH=$HOME/Documents/programming/go
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin
+
+# Set PATH, MANPATH, etc., for Homebrew.
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Add Visual Studio COde (code)
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+export DOCKER_HOST="unix://${HOST}/.colima/default/docker.sock"
+
+alias stree="/Applications/SourceTree.app/Contents/Resources/stree"
