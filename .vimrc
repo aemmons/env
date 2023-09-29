@@ -99,7 +99,6 @@ map <ScrollWheelDown> <C-E>
 
 set clipboard=unnamed
 
-
 " Pathogen plugin manager stuff:
 "call pathogen#infect()
 
@@ -110,20 +109,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " Ropevim
 let ropevim_vim_completion=1
-
-" Session settings
-set ssop-=options    " do not store global and local values in a session
-set ssop-=folds      " do not store folds
-let g:PathToSessions = $HOME . "/.vim/sessions/"
-function MkSesh(...)
-  let fname = a:0 > 0 ? a:1 : ""
-  if fname != ""
-    exe "mksession! " . g:PathToSessions . "lastsesh" . fname . ".vim"
-  else
-    exe "mksession! " . g:PathToSessions . "lastsesh.vim"
-  endif
-endfunction
-com -nargs=* MkSesh call MkSesh(<q-args>)
 
 " Session settings
 set ssop-=options    " do not store global and local values in a session
