@@ -1,4 +1,9 @@
+#/usr/bin/env bash
+
 # Series of commands to provision a new Mac system
+
+set -e
+set -x
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> $HOME/.zprofile
@@ -8,11 +13,10 @@ brew update
 
 brew install zsh
 brew install --cask iterm2
+brew install python3
 brew install git
 brew install vim
 brew install watson
-brew install python3
-brew install pip
 brew install docker docker-compose docker-Buildx
 brew install colima
 brew install golang
@@ -42,3 +46,6 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 
 # Copy config files to home directory:
 cp .bashrc .gitconfig .gitignore_global .profile .vimrc .zshrc ~/
+
+source ~/.zshrc
+
